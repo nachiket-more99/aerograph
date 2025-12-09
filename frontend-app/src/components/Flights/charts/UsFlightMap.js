@@ -93,7 +93,7 @@ const UsGeoMap = ({
             }
           : null;
       });
-      console.log('Flight Markers are: ', markers);
+
       setRoutesData(routes);
       setMarkersData(markers);
 
@@ -150,7 +150,7 @@ const UsGeoMap = ({
 
   // Effect to update key for triggering re-render
   useEffect(() => {
-    setUpdateKey(updateKey + 1);
+    setUpdateKey((prev) => prev + 1)
   }, [selectedRoute, updateKey]);
 
   return (
@@ -199,7 +199,7 @@ const UsGeoMap = ({
 
                 {markersData.map(({ code, city, coordinates }) => {
                   return (
-                    <Tooltip title={city} placement='top'>
+                    <Tooltip key={city} title={city} placement='top'>
                       <Marker
                         key={city}
                         coordinates={coordinates}
@@ -238,9 +238,9 @@ const UsGeoMap = ({
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {routesTable.map((row) => (
+                  {routesTable.map((row, index) => (
                     <TableRow
-                      key={row.airline}
+                      key={index}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       onClick={(event) => handleSelectFlight(event, row)}
                     >

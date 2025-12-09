@@ -15,7 +15,6 @@ const Airlines = () => {
   // Effect to update local state when data changes
   useEffect(() => {
     if (data.flightsData != null && data.airlinesData != null) {
-      console.log(data);
       setAirlinesData(data.airlinesData);
       setFlightsData(data.flightsData);
     }
@@ -88,7 +87,6 @@ const Airlines = () => {
   // Takes flights data states and creates new object array {AIRLINE, DEPARTURE_DELAY, ARRIVAL_DELAY} for AirlinesHistory.js
   const handleHistoryData = useCallback(
     (iata_code) => {
-      console.log(iata_code);
       return flightsData
         .filter((flight) => flight.AIRLINE === iata_code)
         .map(({ AIRLINE, DEPARTURE_DELAY, ARRIVAL_DELAY }) => {

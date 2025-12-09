@@ -35,7 +35,7 @@ const UsAirportMap = ({ markersData }) => {
 
               {markersData.map(({ code, city, coordinates }) => {
                 return (
-                  <Tooltip title={city} placement='top'>
+                  <Tooltip key={code} title={city} placement='top'>
                     <Marker
                       key={code}
                       coordinates={coordinates}

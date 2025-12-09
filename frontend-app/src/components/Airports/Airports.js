@@ -33,7 +33,7 @@ const Airports = () => {
       data.flightsData != null &&
       data.airlinesData != null
     ) {
-      console.log(data.airportsData);
+
       setAirlinesData(data.airlinesData);
       setFlightsData(data.flightsData);
       setAirportsData(data.airportsData);

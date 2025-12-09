@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 app.options("*", cors());
 
-const mongoURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.liwdhud.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const mongoURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.eshwv7c.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
 
 mongoose
   .connect(mongoURL, {
