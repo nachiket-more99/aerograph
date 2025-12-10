@@ -1,27 +1,20 @@
 :root {
-  --black: #020202;
+  --black: #1a1a24;
   --white: #ffffff;
-  --blue: #00425c;
-  --cyan: #c8e7ec;
-
-  --offwhite: #efefef;
-  --navyblue: #011638;
-  --purple: #9055a2;
-  --navyblue1: #2e294e;
-  --pink: #d499b9;
-  --pink1: #e8c1c5;
+  --offwhite: #f5f4f1;
+  --purple: #a78bfa;
+  --purple-light: #f0eefb;
+  --purple-mid: #7c5cbf;
+  --border: #e8e6e0;
 }
 
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
 * {
-  scrollbar-width: auto;
-  scrollbar-color: var(--navyblue) transparent;
+  scrollbar-width: thin;
+  scrollbar-color: #d1cfe9 transparent;
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 *::-webkit-scrollbar-track {
@@ -29,56 +22,29 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--navyblue);
+  background-color: #d1cfe9;
   border-radius: 10px;
-  border: 3px solid transparent;
-  height: 100px;
 }
-
-/* .App {
-=======
-  --purple: #9055A2;
-  --navyblue1: #2E294E;
-  --pink: #D499B9;
-  --pink1: #E8C1C5;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-} */
 
 .page-container {
-  width: calc(100% - 250px);
-  margin-left: 250px;
-  padding-right: 10px;
-  padding-top: 76px;
+  width: calc(100% - 190px);
+  margin-left: 190px;
+  padding: 24px;
+  min-height: 100vh;
+  background: #f5f4f1;
 }
 
 .btn-primary {
-  border-radius: 50px !important;
-  font-weight: 600 !important;
-  
+  background-color: var(--purple-light) !important;
+  border-color: #ddd9f7 !important;
+  color: var(--purple-mid) !important;
+  border-radius: 20px !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  padding: 4px 14px !important;
 }
-.btn-primary::after {
-  margin-left: 10px;
-  top: 2px;
-  position: relative;
-}
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -87,27 +53,35 @@
 .btn.show,
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
-  background-color: var(--offwhite) !important;
-  border-color: var(--offwhite) !important;
+  background-color: #e5e0f7 !important;
+  border-color: #ddd9f7 !important;
+  color: var(--purple-mid) !important;
 }
 
-.dropdown-toggle{
-  background-color: var(--offwhite) !important;
-  border-color: var(--offwhite) !important;
-  color: var(--black) !important;
+.dropdown-toggle {
+  background-color: var(--purple-light) !important;
+  border-color: #ddd9f7 !important;
+  color: var(--purple-mid) !important;
 }
+
 .dropdown-menu.show {
   display: block;
   max-height: 300px;
   overflow-y: scroll;
-  background-color: var(--white);
+  background-color: #fff;
   border-radius: 10px;
+  border: 0.5px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  font-size: 13px;
 }
+
 .dropdown-item {
-  color: var(--navyblue);
-  font-weight: 500;
+  color: #1a1a24;
+  font-weight: 400;
 }
-.dropdown-item:active, .dropdown-item:hover {
-  background-color: unset !important;
-  color: var(--navyblue) !important;
+
+.dropdown-item:hover,
+.dropdown-item:active {
+  background-color: var(--purple-light) !important;
+  color: var(--purple-mid) !important;
 }
