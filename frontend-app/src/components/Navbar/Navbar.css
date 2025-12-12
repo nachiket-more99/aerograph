@@ -1,49 +1,80 @@
-.nav-pills li a:hover,
-.nav-pills li a:focus {
-    background-color: var(--purple) !important;
-    text-decoration: none solid 4px;
-}
-
-.container-fluid .col{
-  text-align: center;
-}
-
-.dashboard{
+.sidebar {
   position: fixed;
   top: 0;
-  background-color: var(--white);
-  width: calc(100vw - 250px);
-  margin-left: 250px;
-  height: 76px;
-  z-index: 1;
+  left: 0;
+  width: 190px;
+  height: 100vh;
+  background-color: #1a1a24;
   display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-
-.dashboard span{
-  font-size: 2rem;
-  font-weight: bold;
-  width: fit-content;
+  flex-direction: column;
+  padding: 24px 0;
+  z-index: 100;
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--white);
-    width: fit-content;
-  }
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  padding: 0 20px 32px;
+  letter-spacing: -0.3px;
+}
 
-  .container-fluid{
-    width: 250px;
-    position: fixed;
-    margin: unset;
-    padding: 0;
-  }
+.logo span {
+  color: #a78bfa;
+}
 
-  .container-fluid .col{
-    width: 100%;
-    padding-top: 20px;
-  }
-  
-  
+.nav-link-item {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.nav-link-item:hover {
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+}
+
+.nav-link-item.active {
+  color: #fff;
+  border-left-color: #a78bfa;
+  background: rgba(167,139,250,0.1);
+}
+
+.nav-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 190px;
+  width: calc(100% - 190px);
+  height: 60px;
+  background: #f5f4f1;
+  border-bottom: 0.5px solid #e8e6e0;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 99;
+}
+
+.topbar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a24;
+  letter-spacing: -0.3px;
+}

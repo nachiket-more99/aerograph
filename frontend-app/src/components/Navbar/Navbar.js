@@ -1,44 +1,34 @@
-import React from "react";
-import { Link as NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Navbar.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
+  const links = [
+    { to: '/airlines', label: 'Airlines' },
+    { to: '/airports', label: 'Airports' },
+    { to: '/flights', label: 'Flights' },
+  ];
+
   return (
-    
-<div>
-<div className="dashboard">
-  
-<span className="fs-4 d-none d-sm-inline ">Dashboard</span>
-</div>
-    <div className="container-fluid">
-      <div className="col col-md-2 min-vh-100 bg-dark">
-        <h1 className="logo d-flex d-none d-sm-inline">
-          <span className="fs-4 d-none d-sm-inline">AeroGraph</span>
-        </h1>
-        <hr className="text-secondary d-none d-sm-block" />
-        <ul className="nav nav-pills flex-column mt-3 mt-sm-0">
-          {/* Navbar Links */}
-          {[
-            { to: "/airlines", label: "Airlines" },
-            { to: "/airports", label: "Airports" },
-            { to: "/flights", label: "Flights" },
-          ].map((link, index) => (
-            <li key={index} className="nav-item fs-4 my-1 py-2 py-sm-0">
-              <NavLink
-                to={link.to}
-                className="nav-link text-white fs-5"
-                aria-current="page"
-              >
-                <span className="d-none d-sm-inline">{link.label}</span>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+    <>
+      <div className='sidebar'>
+        <div className='logo'>Aero<span>Graph</span></div>
+        {links.map((link, index) => (
+          <NavLink
+            key={index}
+            to={link.to}
+            className={({ isActive }) =>
+              isActive ? 'nav-link-item active' : 'nav-link-item'
+            }
+          >
+            {link.label}
+          </NavLink>
+        ))}
       </div>
-      {/* </div> */}
-    </div>
-</div>
+      <div className='topbar'>
+        <span className='topbar-title'>Dashboard</span>
+      </div>
+    </>
   );
 };
 
