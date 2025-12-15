@@ -4,16 +4,17 @@ import { Chart } from 'react-google-charts';
 // Options configuration for the line chart
 export const lineChartOptions = {
   curveType: 'function',
-  legend: { position: 'top' },
-  colors: ['#011638', '#D499B9'],
-  hAxis: {
-    textPosition: 'none',
-  },
+  legend: { position: 'top', textStyle: { color: '#888', fontSize: 11 } },
+  colors: ['#a78bfa', '#fca5a5'],
+  backgroundColor: 'transparent',
+  fontName: 'DM Sans',
+  hAxis: { textPosition: 'none' },
   vAxis: {
-    viewWindow: {
-      max: 350, // Set your desired maximum value for the y-axis
-    },
+    textStyle: { color: '#888', fontSize: 10 },
+    gridlines: { color: '#f0eeea' },
+    viewWindow: { max: 350 },
   },
+  chartArea: { width: '90%', height: '75%' },
 };
 
 // Functional component for displaying airlines history using a line chart
