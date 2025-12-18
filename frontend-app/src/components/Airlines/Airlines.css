@@ -1,64 +1,70 @@
-.top {
+.airlines-container {
+  padding-top: 60px;
   display: flex;
-  flex-direction: row;
-  height: 60vh;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.airlines-container .top {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 16px;
+}
+
+.airlines-container .bottom {
   width: 100%;
 }
 
 .card-container {
-  margin: 10px;
+  background: #fff;
+  border: 0.5px solid #e8e6e0;
+  border-radius: 12px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  background-color: var(--white);
-  border-radius: 20px;
-  padding: 20px;
-}
-
-.airlines-card {
-  width: 40%;
-  height: calc(100% - 20px);
 }
 
 .card-title {
-  font-weight: 700;
-  font-size: 17px !important;
-  height: fit-content;
-  text-align: left;
-  margin-bottom: 1vw;
+  font-size: 11px;
+  font-weight: 500;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 14px;
+}
+
+.airlines-card {
+  min-height: 300px;
 }
 
 .airlines {
-  height: 100%;
+  flex: 1;
   width: 100%;
+  min-height: 250px;
 }
 
 .airline-delays-card {
-  width: calc(60% - 20px);
-  height: calc(100% - 20px);
+  min-height: 380px;
 }
 
 .airline-delays {
-  height: 100%;
+  flex: 1;
   width: 100%;
-  border-radius: 10px;
+  min-height: 320px;
 }
 
-.bottom {
-  height: 50vh;
-  width: 100%;
-}
-
-.history-card > div {
+.history-card > div:first-child {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
 
-.history-card > div > .dropdown {
-  margin-left: auto;
+.history-card > div:first-child .card-title {
+  margin-bottom: 0;
 }
 
 .history-delays {
-  min-height: 30vh;
-  height: 100%;
   width: 100%;
-  border-radius: 10px;
+  min-height: 300px;
 }
