@@ -1,50 +1,87 @@
-.airports-container .top{
-    display: flex;
-    flex-direction: row;
-    height: 50vh;
-    width: 100%;
+.airports-container {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.airports-container .airports-map-card{
-
-    width: 50%;
-    height: calc(100% - 20px);
+.airports-container .top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.airports-container .airports-map{
-    height: 100%;
+.airports-container .bottom {
+  width: 100%;
 }
 
-.airports-container .busiest-airports-card{
-    
-    width: 50%;
-    height: calc(100% - 20px);
+.airports-container .airports-map-card > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
-.airports-container .airports-map-card > div {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .airports-map-card > div > .dropdown {
-    margin-left: auto;
-  }
-
-.airports-container .bottom{
-    height: 80vh;
-    width: 100%;
+.airports-container .airports-map-card > div:first-child .card-title {
+  margin-bottom: 0;
 }
 
-.airports-container .airports-list-card{
-    height: 100%;
-}
-.airports-container .airports-list{
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100%;
+
+.airports-container .airports-map-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
 }
 
-.airports-container .busiest-airports{
-    height: 100%;
+.airports-container .airports-map {
+  flex: 1;
+  width: 100%;
+  min-height: 340px;
+}
+
+.airports-container .busiest-airports-card {
+  min-height: 420px;
+}
+
+.airports-container .busiest-airports {
+  flex: 1;
+  width: 100%;
+  min-height: 340px;
+}
+
+.airports-container .airports-list-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.airports-container .airports-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 420px;
+}
+
+.airports-container .MuiTableCell-head {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #aaa !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.7px !important;
+  background: #fff !important;
+  border-bottom: 0.5px solid #e8e6e0 !important;
+}
+
+.airports-container .MuiTableCell-body {
+  font-size: 13px !important;
+  color: #444 !important;
+  border-bottom: 0.5px solid #f0eeea !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.airports-container .MuiPaper-root {
+  box-shadow: none !important;
+  border-radius: 12px !important;
+}
+
+.airports-container .MuiTableRow-root:hover {
+  background: #faf9f7 !important;
 }
