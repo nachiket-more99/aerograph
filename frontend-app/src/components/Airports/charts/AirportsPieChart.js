@@ -13,29 +13,29 @@ export const data = [
 
 // Options for the pie chart
 export const pieChartOptions = {
-  width: "auto",
-  height: "100%",
-  fontName: "Montserrat",
-  legend: {
-    position: "none",
-  },
-  // Custom colors for each slice of the pie chart
+  width: 'auto',
+  height: '100%',
+  fontName: 'DM Sans',
+  backgroundColor: 'transparent',
+  legend: { position: 'none' },
   slices: [
-    { color: "#011638" },
-    { color: "#9055A2" },
-    { color: "#DF7163" },
-    { color: "#6862C4" },
-    { color: "#D499B9" },
-    { color: "#E8C1C5" },
-    { color: "#FEB05B" },
-    { color: "#009B8F" },
-    { color: "#007CD3" },
-    { color: "#00C9B5" },
-    { color: "#57423E" },
-    { color: "#446911" },
-    { color: "#C24F7A" },
-    { color: "#798897" },
+    { color: '#a78bfa' },
+    { color: '#67e8f9' },
+    { color: '#86efac' },
+    { color: '#fda4af' },
+    { color: '#fbbf24' },
+    { color: '#60a5fa' },
+    { color: '#f472b6' },
+    { color: '#34d399' },
+    { color: '#fb923c' },
+    { color: '#a3e635' },
+    { color: '#e879f9' },
+    { color: '#38bdf8' },
+    { color: '#f87171' },
+    { color: '#94a3b8' },
   ],
+  pieSliceBorderColor: 'transparent',
+  chartArea: { width: '85%', height: '85%' },
 };
 
 /**

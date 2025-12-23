@@ -24,34 +24,30 @@ const UsAirportMap = ({ markersData }) => {
         <Geographies geography={geoUrl}>
           {({ geographies }) => (
             <>
-              {geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  stroke='#fff'
-                  geography={geo}
-                  fill='#e6e6e6'
-                />
-              ))}
+{geographies.map((geo) => (
+  <Geography
+    key={geo.rsmKey}
+    stroke='#f5f4f1'
+    geography={geo}
+    fill='#e8e6e0'
+    style={{
+      default: { outline: 'none' },
+      hover: { fill: '#d1cfe9', outline: 'none' },
+      pressed: { outline: 'none' },
+    }}
+  />
+))}
 
-              {markersData.map(({ code, city, coordinates }) => {
-                return (
-                  <Tooltip key={code} title={city} placement='top'>
-                    <Marker
-                      key={code}
-                      coordinates={coordinates}
-                      data-tip={code}
-                      data-for={`tooltip-${code}`}
-                    >
-                      <circle
-                        r={3}
-                        fill='#011638'
-                        stroke='#011638'
-                        strokeWidth={2}
-                      />
-                    </Marker>
-                  </Tooltip>
-                );
-              })}
+{markersData.map(({ code, city, coordinates }) => {
+  if (!coordinates || coordinates[0] == null || coordinates[1] == null) return null;
+  return (
+    <Tooltip key={code} title={city} placement='top'>
+      <Marker coordinates={coordinates}>
+        <circle r={4} fill='#011638' stroke='#011638' strokeWidth={1.5} />
+      </Marker>
+    </Tooltip>
+  );
+})}
             </>
           )}
         </Geographies>
