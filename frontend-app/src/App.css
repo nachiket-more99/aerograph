@@ -30,6 +30,7 @@
   width: calc(100% - 190px);
   margin-left: 190px;
   padding: 24px;
+  padding-bottom: 48px;
   min-height: 100vh;
   background: #f5f4f1;
 }
