@@ -1,13 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
+
   const links = [
     { to: '/airlines', label: 'Airlines' },
     { to: '/airports', label: 'Airports' },
     { to: '/flights', label: 'Flights' },
   ];
+
+  const pageTitle = links.find(link => location.pathname.includes(link.to.replace('/', '')))?.label || 'Dashboard';
 
   return (
     <>
@@ -26,7 +30,7 @@ const Navbar = () => {
         ))}
       </div>
       <div className='topbar'>
-        <span className='topbar-title'>Dashboard</span>
+        <span className='topbar-title'>{pageTitle}</span>
       </div>
     </>
   );
