@@ -86,3 +86,11 @@
   background-color: var(--purple-light) !important;
   color: var(--purple-mid) !important;
 }
+
+.card-container {
+  transition: box-shadow 0.2s ease;
+}
+
+.card-container:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
