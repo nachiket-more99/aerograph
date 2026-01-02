@@ -11,6 +11,7 @@ import Airlines from "./components/Airlines/Airlines";
 import Airports from "./components/Airports/Airports";
 import Flights from "./components/Flights/Flights";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from './components/Footer/Footer';
 import { DataProvider } from "./context/DataContext";
 
 
@@ -32,6 +33,7 @@ function App() {
               <Route exact path="/flights" element={<Flights />} />
               <Route exact path="/navbar" element={<Navbar />} />
             </Routes>
+            <Footer />
           </div>
         </Router>
       </div>
