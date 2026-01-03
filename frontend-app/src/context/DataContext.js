@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
 const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
@@ -12,8 +12,10 @@ const DataProvider = ({ children }) => {
 
   useEffect(() => {
     // Fetch data from your API here
+
     const fetchAirlineData = async () => {
-      axios.get('http://localhost:5000/airlines/all')
+      if (airlinesData) return;
+      axios.get(`${BASE_URL}/airlines/all`)
       .then((response) => {
         setAirlinesData(response.data)
       })
@@ -22,9 +24,9 @@ const DataProvider = ({ children }) => {
       });
     };
 
-    
     const fetchFlightData = async () => {
-      axios.get('http://localhost:5000/flights/all')
+      if (flightsData) return;
+      axios.get(`${BASE_URL}/flights/all`)
       .then((response) => {
         setFlightsData(response.data)
       })
@@ -33,9 +35,9 @@ const DataProvider = ({ children }) => {
       });
     };
 
-    
     const fetchAirportData = async () => {
-      axios.get('http://localhost:5000/airports/all')
+      if (airportsData) return;
+      axios.get(`${BASE_URL}/airports/all`)
       .then((response) => {
         setAirportsData(response.data)
       })
