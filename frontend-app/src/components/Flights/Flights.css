@@ -35,10 +35,10 @@
   font-weight: 700;
 }
 
-#total-airlines .flights-values { color: #a78bfa; }
-#total-flights .flights-values { color: #67e8f9; }
-#total-origin .flights-values { color: #86efac; }
-#total-dest .flights-values { color: #fda4af; }
+#total-airlines .flights-values { color: #7c3aed; }
+#total-flights .flights-values { color: #06b6d4; }
+#total-origin .flights-values { color: #22c55e; }
+#total-dest .flights-values { color: #f43f5e; }
 
 #total-airlines { background: linear-gradient(135deg, #f0eefb, #e9d5ff); 
 height: auto;
@@ -57,7 +57,7 @@ min-height: unset;}
 #total-flights .card-title,
 #total-origin .card-title,
 #total-dest .card-title {
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.7);
 }
 
 .flights-container .bottom {
