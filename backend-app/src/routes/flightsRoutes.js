@@ -11,11 +11,17 @@ router.get('/all', async (req, res) => {
       console.log('returning from cache');
       return res.json(cache);
     }
-    const flightsCollection = mongoose.connection.collection('flights');
-    const flights = await flightsCollection.find({}).toArray();
-    cache = flights;
+    // const flightsCollection = mongoose.connection.collection('flights');
+    // const flights = await flightsCollection.find({}).toArray();
+    // cache = flights;
 
+    // res.json(flights);
+
+    
+    const flights = await mongoose.connection.db.collection('flights').find({}).toArray();
+    cache = flights;
     res.json(flights);
+
   } catch (error) {
     console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
