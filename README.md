@@ -1,68 +1,73 @@
-
 # AeroGraph
 
-The Flight Data Visualization and Analysis App is a React.js dashboard designed to provide insights into airline data. The application leverages various data visualization techniques to display the distribution of flights across different origins and destinations in the United States. It relies on a contextualized user interface, allowing users to explore and analyze flight information based on selected airlines and origin cities.
+A full-stack flight data analytics dashboard built with React and Node.js, visualizing 10,000+ US domestic flights across interactive maps, delay charts, and route distributions.
 
-## Technologies Used
+**Live Demo:** https://aerograph-xi.vercel.app
 
- - React
- - CSS
- - Bootstrap
- - Node.js
- - MongoDB
+## Tech Stack
 
+- **Frontend:** React, React Router, Framer Motion, react-simple-maps, react-google-charts, Material UI
+- **Backend:** Node.js, Express.js, MongoDB Atlas, Mongoose
+- **Deployment:** Vercel (frontend), Render (backend)
 
 ## Features
-The dashboard application inclueds three components: Airlines, Airports, Flights a single-page application that includes the following features:
 
-- Airline Distribution: Display the activity levels of airlines by the number of flights, identifying the most and least active carriers.
-- Airport Locations: Provide a geographical visualization of airport locations.
-- Flight Departure Delays: Visualize the distribution of departure delays for all flights.
-- Flight Route Map: Illustrate flight routes by connecting airports on a map.
-- Airline Performance: Compare on-time performance of different airlines, highlighting arrival and departure delays.
-- Airport Traffic: Visualize the busiest airports based on the number of departing or arriving flights.
-
+- **Airlines Dashboard** - Pie chart of flight distribution by airline, stacked bar chart of departure/arrival delays, historical performance line chart per airline
+- **Airports Dashboard** - Interactive US map with airport markers by state, pie chart of busiest airports by traffic, searchable airport directory
+- **Flights Dashboard** - Live flight route map with origin/destination lines, stat cards for total flights, origins and destinations, filterable routes table
 
 ## Run Locally
 
-Clone the project
-
+**Clone the repo:**
 ```bash
-  git clone git@github.com:nachiket-more/CS-564-001-Front-End-Project.git
+git clone https://github.com/nachiket-more99/aerograph.git
 ```
 
-Go to the projects frontend and backend directories
-
+**Backend:**
 ```bash
-  cd CS-564-001-Front-End-Project\frontend-app
-```
-```bash
-  cd CS-564-001-Front-End-Project\backend-app
-```
-Install NodeJs in both directories
-```bash
-  npm i 
-```
-Start the servers in both directories 
-
-```bash
-  npm start
+cd aerograph/backend-app
+npm install
 ```
 
-Dashboard will run on 
-
+Create a `.env` file in `backend-app/`:
+```
+PORT=5000
+DB_USER=nachiket
+DB_PASSWORD=aerographnachiket
+DB_NAME=flights_data
+```
 ```bash
-  http:localhost:3000/
+npm start
 ```
 
-## Deployed Dashboard
+**Frontend:**
 ```bash
-https://aerograph.onrender.com/ 
+cd aerograph/frontend-app
+npm install
 ```
 
+Create a `.env` file in `frontend-app/`:
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+```bash
+npm start
+```
 
+Dashboard runs at `http://localhost:3000`
 
+## Project Structure
+```
+aerograph/
+├── frontend-app/        # React app
+│   └── src/
+│       ├── components/  # Airlines, Airports, Flights, Navbar, Landing
+│       └── context/     # DataContext for global state
+└── backend-app/         # Express API
+    └── src/
+        └── routes/      # airlines, airports, flights routes
+```
 
-## Contact
+## Data
 
-If you have any questions or feedback regarding this project, please feel free to contact us at nachiket.more@pdx.edu or sjagtap@pdx.edu
+US DOT 2015 Airline On-Time Statistics - 10,000 flight records across 13 airlines and 300+ airports.
