@@ -32,8 +32,8 @@ npm install
 Create a `.env` file in `backend-app/`:
 ```
 PORT=5000
-DB_USER=nachiket
-DB_PASSWORD=aerographnachiket
+DB_USER=your_user
+DB_PASSWORD=your_password
 DB_NAME=flights_data
 ```
 ```bash
